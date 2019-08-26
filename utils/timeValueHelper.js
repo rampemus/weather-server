@@ -40,7 +40,7 @@ const modifyAllValuePairs = ( location ) => {
     //great Schott! let's go back to the future!
     //exactly to the next even hour of now
     const nextEvenHour = now.valueOf() - now.valueOf()%3600000
-    console.log(new Date(nextEvenHour))
+    // console.log(new Date(nextEvenHour))
     list = forecast.data.Temperature.timeValuePairs
     addTime(list, nextEvenHour)
     // console.log(list)
@@ -95,7 +95,7 @@ const deleteDataPairsFromBeginning = (list, n) => {
 
 let forecast = ''
 const timeCorrectedPairs = (location) => {
-    console.log('need to make changes for ' + location)
+    // console.log('need to make changes for ' + location)
 
     forecast = {
         'data': {

@@ -44,7 +44,7 @@ describe('Mock test', () => {
 
         const timeDifference = Math.abs( end - begin )/24/60/60/1000
 
-        console.log('timeDifference', timeDifference)
+        // console.log('timeDifference', timeDifference)
 
         expect(timeDifference < 10).toBe(true)
     })
