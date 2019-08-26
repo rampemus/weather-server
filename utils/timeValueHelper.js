@@ -5,6 +5,7 @@ const modifyAllValuePairs = ( location ) => {
     let list = forecast.data.Temperature.timeValuePairs
     addTime(list, -1566712800000)
 
+
     list = forecast.data.Humidity.timeValuePairs
     addTime(list, -1566712800000)
 
@@ -19,25 +20,27 @@ const modifyAllValuePairs = ( location ) => {
     //console.log('From data we need to subtract ' +  extraHoursInData + ' amount of data pairs starting from beginning')
 
     list = forecast.data.Temperature.timeValuePairs
-    addTime(list, extraHoursInData*60*60*1000)
+    addTime(list, -extraHoursInData*60*60*1000)
     deleteDataPairsFromBeginning(list,extraHoursInData)
+
     // console.log(list)
 
     list = forecast.data.Humidity.timeValuePairs
-    addTime(list, extraHoursInData*60*60*1000)
+    addTime(list, -extraHoursInData*60*60*1000)
     deleteDataPairsFromBeginning(list,extraHoursInData)
 
     list = forecast.data.WindDirection.timeValuePairs
-    addTime(list, extraHoursInData*60*60*1000)
+    addTime(list, -extraHoursInData*60*60*1000)
     deleteDataPairsFromBeginning(list,extraHoursInData)
 
     list = forecast.data.WindSpeedMS.timeValuePairs
-    addTime(list, extraHoursInData*60*60*1000)
+    addTime(list, -extraHoursInData*60*60*1000)
     deleteDataPairsFromBeginning(list,extraHoursInData)
 
     //great Schott! let's go back to the future!
     //exactly to the next even hour of now
     const nextEvenHour = now.valueOf() - now.valueOf()%3600000
+    console.log(new Date(nextEvenHour))
     list = forecast.data.Temperature.timeValuePairs
     addTime(list, nextEvenHour)
     // console.log(list)
