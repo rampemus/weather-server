@@ -6,7 +6,7 @@ const mockApi = supertest(app)
 describe('Mock test', () => {
     test('Server responds data', async() => {
         const response = await mockApi
-            .get('/wfs')
+            .get('/wfs/Helsinki')
             .expect(200)
             .expect('Content-Type', /application\/json/)
 
@@ -16,7 +16,7 @@ describe('Mock test', () => {
 
     test('info begin-date matches with current date', async() => {
         const response = await mockApi
-            .get('/wfs')
+            .get('/wfs/Helsinki')
 
         const now = new Date()
         const begin = new Date(response.body.info.begin)
@@ -28,7 +28,7 @@ describe('Mock test', () => {
 
     test('info end date is bigger than begin date', async() => {
         const response = await mockApi
-            .get('/wfs')
+            .get('/wfs/Helsinki')
 
         const begin = new Date(response.body.info.begin)
         const end = new Date(response.body.info.end)
@@ -37,7 +37,7 @@ describe('Mock test', () => {
 
     test('info time frame should be between 1-7 days', async() => {
         const response = await mockApi
-            .get('/wfs')
+            .get('/wfs/Helsinki')
 
         const begin = new Date(response.body.info.begin)
         const end = new Date(response.body.info.end)
