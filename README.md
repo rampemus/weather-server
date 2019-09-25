@@ -1,5 +1,5 @@
 # weather-server
- Weather-app for using fmi open data
+ Weather-app for using fmi open data. Frontend build source code can be found at (https://github.com/rampemus/weather).
 
 ## installation
 
